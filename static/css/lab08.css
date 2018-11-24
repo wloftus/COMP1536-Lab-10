@@ -1,0 +1,65 @@
+/**STYLING FOR lab08.html, by Emilio Ditrocchio and William Loftus**/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+#content {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+.stretch {width: 100%;}
+.thin {height: 25px;}
+a {
+  text-decoration: none;
+  color: white;
+}
+header {
+  background-color: black;
+  font-size:12pt;
+  padding: 10px;
+}
+header a {margin: 10px;}
+#location {display: none;}
+header h3 {display: none;}
+button {
+  float: right;
+  margin-right: 20px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-color: darkred;
+}
+nav {
+  height: 60px;
+  background-color: white;
+}
+#logo img {
+  display: inline-block;
+  margin: 4px 0 0 30px;
+  width: 40px;
+  height: 45px;
+  border: solid 2px red;
+  border-radius: 5%;
+}
+#logo {
+  display: inline-flex;
+  margin-left: 12%;
+}
+#logo span {
+  margin-left: 20px;
+  line-height: 60px;
+  font-size: 18pt;
+  font-weight: bold;
+  color: red;
+}
+figure {
+  height: 300px;
+  margin: 0;
+  background-color: lightblue;
+}
+figure img {height: 100%;}
+#bottomFigBar {background-color: red;}
+#bottomFigBar a {margin: 10px 30px;}
+section {background-color: grey;}
