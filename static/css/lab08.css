@@ -45,7 +45,6 @@ nav {
 }
 #logo {
   display: inline-flex;
-  margin-left: 12%;
 }
 #logo span {
   margin-left: 20px;
@@ -54,12 +53,39 @@ nav {
   font-weight: bold;
   color: red;
 }
-figure {
-  height: 300px;
-  margin: 0;
-  background-color: lightblue;
+#bottomFigBar {
+  background-color: red;
+  text-align: center;
 }
-figure img {height: 100%;}
-#bottomFigBar {background-color: red;}
 #bottomFigBar a {margin: 10px 30px;}
 section {background-color: grey;}
+
+#bottomWrap {
+  text-align: center;
+}
+
+#bottomWrap h6 {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 400px) {
+  #bottomWrap img {
+    width: 300px;
+    height: 300px;
+}
+
+@media only screen and (min-width: 800px) {
+  #bottomWrap img {
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+}
+
+@media only screen and (min-width: 1270px) {
+  #bottomWrap img {
+    width: 500px;
+    height: 500px;
+    margin: 50px;
+}
