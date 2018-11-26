@@ -69,7 +69,24 @@ section {background-color: grey;}
   margin: 0 auto;
   padding-bottom: 30px;
 }
-
+#pic {
+  height: 600px;
+  background-image: url("../html/Gym-Black-White-Photo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#gymPicContent {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+}
+#gymPicContent div {
+  width: 100%;
+  height: 100px;
+  background-color: lightblue;
+}
 .pictureText h4, h6 {
   margin: 2px;
 }
@@ -83,7 +100,6 @@ section {background-color: grey;}
   top: 225px;
   left: 131px;
   border: 0.5px solid black;
-
 }
 
 #right {
