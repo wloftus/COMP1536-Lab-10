@@ -96,16 +96,22 @@ $(document).ready(function() {
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
                 var div = $("#inner-content");
-                let htmlStr = "<p>Here are the top 10 songs for working out:</p><ol>";
+                let htmlStr = "<p id='title'>Here are the top 10 songs for working out:</p><ol id='items'>";
                 for(i in data) {
                     htmlStr += "<li>" + i + ": " + data[i] + "</li>";
                 }
                 htmlStr += "</ol>";
 
                 div.html(htmlStr);
-                div.css("width", "300px");
+                div.css("width", "400px");
                 div.css("margin", "0 auto");
                 div.css("text-align", "left");
+                div.css("padding-left", "10%");
+                $("#title").css("font-family", "'Amatic SC', cursive");
+                $("#title").css("font-size", "22pt");
+                $("#title").css("font-weight", "bold");
+                $("#items").css("font-family", "'Amatic SC', cursive");
+                $("#items").css("font-size", "18pt");
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR:", jqXHR, textStatus, errorThrown);
