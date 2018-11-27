@@ -84,11 +84,10 @@ $(document).ready(function() {
 
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
-    $('#mainMenu #getJSONList').click(function(e) {
-
+    $('#getJSON').click(function(e) {
+        $(".bottomPics").hide();
         // don't allow the anchor to visit the link
         e.preventDefault();
-
         $.ajax({
             url: "/ajax-GET-list",
             dataType: "json",
@@ -96,18 +95,19 @@ $(document).ready(function() {
             data: { format: "json-list"},
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
-                var div = $("#content");
-                let htmlStr = "<ul>";
+                var div = $("#inner-content");
+                let htmlStr = "<p>Here are the top 10 songs for working out:</p><ol>";
                 for(i in data) {
-                  console.log(i);
-                    htmlStr += "<li>" + data[i] + "</li>";
+                    htmlStr += "<li>" + i + ": " + data[i] + "</li>";
                 }
-                htmlStr += "</ul>";
-                div.html(htmlStr);
+                htmlStr += "</ol>";
 
+                div.html(htmlStr);
+                div.css("width", "300px");
+                div.css("margin", "0 auto");
+                div.css("text-align", "left");
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $("#p1").text(jqXHR.statusText);
                 console.log("ERROR:", jqXHR, textStatus, errorThrown);
             }
         });

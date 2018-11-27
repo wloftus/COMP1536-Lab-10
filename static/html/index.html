@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../js/client.js"></script>
   </head>
   <body>
     <div id = "content">
@@ -18,7 +19,7 @@
       </header>
       <nav class = "stretch">
         <div id = "logo">
-          <img src = "logo.JPG" alt = "logo">
+          <img src = "../img/logo.JPG" alt = "logo">
           <span>WORKOUTHUB</span>
         </div>
       </nav>
@@ -36,8 +37,8 @@
 
       <div id = "bottomFigBar" class = "stretch thin">
         <a id = "getHTML" href = "#">Get HTML list</a>
-        <a href = "#">OPTION 2</a>
-        <a id = "option3" href = "#">OPTION 3</a>
+        <a id="getJSON" href = "">Get JSON list</a>
+        <span id = "option3">Toggle Pictures</span>
       </div>
 
     </div>
@@ -47,8 +48,8 @@
       <h6>Filler text. Filler text. Filler text. Filler text. Filler text.
         Filler text. Filler text. Filler text. Filler text. Filler text.</h6>
       <div id="inner-content"></div>
-      <img src="workout1.jpg" alt="tyingshoes" class="bottomPics"/>
-      <img src="workout2.jpg" alt = "resting" class="bottomPics"/>
+      <img src="../img/workout1.jpg" alt="tyingshoes" class="bottomPics"/>
+      <img src="../img/workout2.jpg" alt = "resting" class="bottomPics"/>
     </div>
 
     <script>
@@ -57,6 +58,8 @@
           $(".bottomPics").toggle();
         });
       });
+
+
     </script>
   </body>
 </html>

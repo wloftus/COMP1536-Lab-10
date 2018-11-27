@@ -57,8 +57,15 @@ nav {
   background-color: red;
   text-align: center;
 }
-#bottomFigBar a {margin: 10px 30px;}
+#bottomFigBar a {
+  margin: 10px 0 0 10px;
+}
 section {background-color: grey;}
+#option3 {
+  margin: 10px 0 0 10px;
+  padding-left: 5px;
+  cursor: pointer;
+}
 
 #bottomWrap {
   text-align: center;
@@ -71,7 +78,7 @@ section {background-color: grey;}
 }
 #pic {
   height: 600px;
-  background-image: url("../html/Gym-Black-White-Photo.jpg");
+  background-image: url("../img/Gym-Black-White-Photo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,11 +88,11 @@ section {background-color: grey;}
   width: 30%;
 }
 #gymPicContent div {
-  color: black;
   width: 100%;
   position: relative;
   transform: translate(0,150px);
   height: 300px;
+  color: white;
 }
 #gymPicContent h1 {
   font-weight: bold;
@@ -124,9 +131,10 @@ section {background-color: grey;}
     text-align: center;
   }
 
-  .stretch img {
-   filter: brightness(70%);
+  #gymPicContent button {
+    margin: 0;
   }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -139,6 +147,7 @@ section {background-color: grey;}
   #bottomFigBar a {
     padding: 0 20px 0 20px;
   }
+
 }
 
 @media only screen and (min-width: 1270px) {
@@ -149,6 +158,6 @@ section {background-color: grey;}
   }
 
   #bottomFigBar a {
-    padding: 0 80px 0 80px;
+    margin-right: 50px;
   }
 }

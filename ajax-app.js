@@ -24,6 +24,7 @@ app.get('/', function (req, res) {
 
 app.use('/js', express.static('static/js'))
 app.use('/css', express.static('static/css'))
+app.use('/img', express.static('static/img'));
 
 app.get('/ajax-GET', function (req, res) {
 
