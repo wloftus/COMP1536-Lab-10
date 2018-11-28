@@ -71,8 +71,18 @@ $(document).ready(function() {
             data: { format: "html-list"},
             success: function(data) {
                 console.log("SUCCESS HTML:", data);
-                $("#inner-content").html(data);
+                var div = $("#inner-content-right");
+                div.html(data);
+                div.css("width", "400px");
+                div.css("margin", "0 auto");
+                div.css("text-align", "left");
+                div.css("float", "right");
 
+                div.css("font-family", "'Amatic SC', cursive");
+                div.css("font-size", "22pt");
+                div.css("font-weight", "bold");
+                div.css("font-family", "'Amatic SC', cursive");
+                div.css("font-size", "18pt");
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 $("#p1").text(jqXHR.statusText);
@@ -95,7 +105,7 @@ $(document).ready(function() {
             data: { format: "json-list"},
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
-                var div = $("#inner-content");
+                var div = $("#inner-content-left");
                 let htmlStr = "<p id='title'>Here are the top 10 songs for working out:</p><ol id='items'>";
                 for(i in data) {
                     htmlStr += "<li>" + i + ": " + data[i] + "</li>";
@@ -106,7 +116,7 @@ $(document).ready(function() {
                 div.css("width", "400px");
                 div.css("margin", "0 auto");
                 div.css("text-align", "left");
-                div.css("padding-left", "10%");
+                div.css("float", "left");
                 $("#title").css("font-family", "'Amatic SC', cursive");
                 $("#title").css("font-size", "22pt");
                 $("#title").css("font-weight", "bold");
