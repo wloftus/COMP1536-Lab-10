@@ -127,15 +127,16 @@ figure img {
   color: white;
   background-color: red;
   margin: 0 10px 0 10px;
+  filter: drop-shadow(6px 6px 6px black);
+}
+#jacked {
+  filter: drop-shadow(6px 6px 6px black);
 }
 section {
-  margin: 0 auto;
   background-color: white;
-  width: 80%;
 }
 #htmlList, #jsonList {
   font-size: 24pt;
-  margin-left: 100px;
 }
 #jsonList h2 {margin-left: 5%;}
 #htmlList h2 {margin-left: 20%;}
@@ -146,6 +147,10 @@ section {
 }
 ol li {margin-top: 20px;}
 ol {margin-left: 15%;}
+
+button:hover {
+  cursor: pointer;
+}
 
 @media only screen and (min-width: 400px) {
   figure img {
@@ -161,7 +166,33 @@ ol {margin-left: 15%;}
   #gymPicContent button {
     margin: 0;
   }
-}
+
+  #defaultText p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #jsonList h2 {
+    font-size: 30pt;
+  }
+  #htmlList h2 {
+    font-size: 30pt;
+  }
+  #bottomFigBar a {
+    font-size:10pt;
+  }
+
+  #bottomFigBar span {
+    font-size: 10pt;
+  }
+
+  #bottomFigBar a, span{
+    margin: 10px 0 0 10px;
+  }
+
+  #htmlList ol {
+    margin-left: 20%;
+  }
+ }
 
 @media only screen and (min-width: 800px) {
   figure img {
@@ -169,8 +200,24 @@ ol {margin-left: 15%;}
     height: 350px;
     margin: 20px;
   }
-  #bottomFigBar a {
+  #bottomFigBar a{
     padding: 0 20px 0 20px;
+    font-size: 18pt;
+  }
+  #bottomFigBar span{
+    padding: 0 20px 0 20px;
+    font-size: 18pt;
+  }
+  #defaultText p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #jsonList h2 {
+    font-size: 25pt;
+    margin-left: 10%;
+  }
+  #htmlList ol {
+    margin-left: 33%;
   }
 }
 
@@ -182,5 +229,14 @@ ol {margin-left: 15%;}
   }
   #bottomFigBar a {
     margin-right: 50px;
+  }
+  #htmlList {
+    margin-left: 10%;
+  }
+  #htmlList h2{
+    margin-left: 25%;
+  }
+  #jsonList h2, ol {
+    margin-left: 33%;
   }
 }
