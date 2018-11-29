@@ -1,66 +1,9 @@
 $(document).ready(function() {
-
-    // // CLEAR THE DATE
-    // $('#mainMenu #clearDate').click(function(e) {
-    //     // don't allow the anchor to visit the link
-    //     e.preventDefault();
-    //     $("#p1").html("Date to go here.");
-    // });
-    //
-    // // CONTACT THE SERVER AND GET THE DATE FROM THE SERVER
-    // $('#mainMenu #getDate').click(function(e) {
-    //
-    //     // don't allow the anchor to visit the link
-    //     e.preventDefault();
-    //
-    //     $.ajax({
-    //         url: "/ajax-GET",
-    //         dataType: "json",
-    //         type: "GET",
-    //         success: function(data) {
-    //             $("#p1").text(data['msg']);
-    //             console.log("SUCCESS:", data);
-    //
-    //         },
-    //         error: function(jqXHR, textStatus, errorThrown) {
-    //             $("#p1").text(jqXHR.statusText);
-    //             console.log("ERROR:", jqXHR, textStatus, errorThrown);
-    //         }
-    //
-    //     });
-    // });
-    //
-    // // INTENTIONALLY GET A 404 FROM THE SERVER
-    // $('#mainMenu #getBadURL').click(function(e) {
-    //
-    //     // don't allow the anchor to visit the link
-    //     e.preventDefault();
-    //
-    //     $.ajax({
-    //         url: "/ajax-GET-SOMETHING-THAT-DOESNT-EXIST",
-    //         dataType: "json",
-    //         type: "GET",
-    //         success: function(data) {
-    //             $("#p1").text(data['msg']);
-    //             console.log("SUCCESS:", data);
-    //
-    //         },
-    //         error: function(jqXHR, textStatus, errorThrown) {
-    //             $("#p1").text(jqXHR.statusText);
-    //             console.log("ERROR:", jqXHR, textStatus, errorThrown);
-    //         },
-    //         // handle a 404 (i.e., page not found)
-    //         statusCode: {
-    //             404: function() {
-    //                 $("#p1").text("Page doesn't exist.");
-    //             }
-    //         }
-    //     });
-    // });
-
     // GET A LIST OF 'THINGS' FROM THE SERVER AS HTML DATA
     $('#getHTML').click(function(e) {
-
+        $("#htmlList").show();
+        $("#defaultText").hide();
+        $("#jsonList").hide();
         // don't allow the anchor to visit the link
         e.preventDefault();
 
@@ -71,18 +14,8 @@ $(document).ready(function() {
             data: { format: "html-list"},
             success: function(data) {
                 console.log("SUCCESS HTML:", data);
-                var div = $("#inner-content-right");
-                div.html(data);
-                div.css("width", "400px");
-                div.css("margin", "0 auto");
-                div.css("text-align", "left");
-                div.css("float", "right");
-
-                div.css("font-family", "'Amatic SC', cursive");
-                div.css("font-size", "22pt");
-                div.css("font-weight", "bold");
-                div.css("font-family", "'Amatic SC', cursive");
-                div.css("font-size", "18pt");
+                var div = $("#htmlList");
+                div.html("<h2>OUR TOP 10 EXERCISES</h2>" + data);
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 $("#p1").text(jqXHR.statusText);
@@ -95,7 +28,9 @@ $(document).ready(function() {
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
     $('#getJSON').click(function(e) {
-        $(".bottomPics").hide();
+        $("#htmlList").hide();
+        $("#defaultText").hide();
+        $("#jsonList").show();
         // don't allow the anchor to visit the link
         e.preventDefault();
         $.ajax({
@@ -105,57 +40,17 @@ $(document).ready(function() {
             data: { format: "json-list"},
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
-                var div = $("#inner-content-left");
-                let htmlStr = "<p id='title'>Here are the top 10 songs for working out:</p><ol id='items'>";
+                var div = $("#jsonList");
+                let htmlStr = "<h2>OUR TOP 10 SONGS FOR WORKING OUT</h2><ol id='items'>";
                 for(i in data) {
                     htmlStr += "<li>" + i + ": " + data[i] + "</li>";
                 }
                 htmlStr += "</ol>";
-
                 div.html(htmlStr);
-                div.css("width", "400px");
-                div.css("margin", "0 auto");
-                div.css("text-align", "left");
-                div.css("float", "left");
-                $("#title").css("font-family", "'Amatic SC', cursive");
-                $("#title").css("font-size", "22pt");
-                $("#title").css("font-weight", "bold");
-                $("#items").css("font-family", "'Amatic SC', cursive");
-                $("#items").css("font-size", "18pt");
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("ERROR:", jqXHR, textStatus, errorThrown);
             }
         });
     });
-
-
-    // PERFORM A HTTP POST, AND GET A RESPONSE FROM THE SERVER
-    // $('#submit').click(function(e) {
-    //     let formData = { firstName: $("#firstName").val(),
-    //                      lastName: $("#lastName").val(),
-    //                      email: $("#email").val()
-    //                    };
-    //     console.log("Form data to send:", formData);
-    //     $.ajax({
-    //         url: "/post-form",
-    //         dataType: "json",
-    //         type: "POST",
-    //         data: formData,
-    //         success: function(data) {
-    //             console.log("SUCCESS JSON:", data);
-    //             // how do we know what we are getting?
-    //             $("#p2").html(data[0] + " " + data[1]['firstName']
-    //                           + " " + data[1]['lastName']
-    //                           + " " + data[1]['email']
-    //                          );
-    //
-    //         },
-    //         error: function(jqXHR, textStatus, errorThrown) {
-    //             $("#p2").text(jqXHR.statusText);
-    //             console.log("ERROR:", jqXHR, textStatus, errorThrown);
-    //         }
-    //     });
-    // });
-
 });

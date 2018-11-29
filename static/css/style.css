@@ -32,7 +32,7 @@ header h3 {display: none;}
   border-color: darkred;
 }
 nav {
-  height: 60px;
+  height: 30px;
   background-color: white;
 }
 #logo img {
@@ -54,11 +54,21 @@ nav {
   color: red;
 }
 #bottomFigBar {
+  height: 40px;
   background-color: red;
   text-align: center;
 }
-#bottomFigBar a {
-  margin: 10px 0 0 10px;
+.option {
+  line-height: 40px;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.option:hover {
+  border-bottom: solid 4px black;
+}
+.option:active {
+  border-bottom: solid 4px white;
 }
 section {background-color: grey;}
 #option3 {
@@ -66,15 +76,20 @@ section {background-color: grey;}
   padding-left: 5px;
   cursor: pointer;
 }
-
-#bottomWrap {
-  text-align: center;
+#bottomWrap {font-family: 'Roboto', sans-serif;}
+#defaultText {text-align: center;}
+h2 {
+  font-size: 36pt;
+  font-weight: bold;
 }
-
-#bottomWrap h6 {
-  width: 60%;
-  margin: 0 auto;
-  padding-bottom: 30px;
+#defaultText p {
+  margin: 10px 150px;
+  font-size: 18pt;
+}
+figure {text-align: center;}
+figure img {
+  border: solid black 4px;
+  border-radius: 20%;
 }
 #pic {
   height: 600px;
@@ -113,63 +128,58 @@ section {background-color: grey;}
   background-color: red;
   margin: 0 10px 0 10px;
 }
-#jacked {}
-#inner-content-left {
-  width: 100%;
+section {
+  margin: 0 auto;
+  background-color: white;
+  width: 80%;
 }
-
-#inner-content-right {
-  width: 100%;
+#htmlList, #jsonList {
+  font-size: 24pt;
+  margin-left: 100px;
 }
-
+#jsonList h2 {margin-left: 5%;}
+#htmlList h2 {margin-left: 20%;}
+#htmlList ol {
+  list-style-type: upper-roman;
+  font-size: 28pt;
+  margin-left: 33%;
+}
+ol li {margin-top: 20px;}
+ol {margin-left: 15%;}
 
 @media only screen and (min-width: 400px) {
-  #bottomWrap img {
+  figure img {
     width: 300px;
     height: 300px;
   }
-
   .pictureText {
     position: absolute;
     top: 180px;
     left: 135px;
     text-align: center;
   }
-
   #gymPicContent button {
     margin: 0;
-  }
-
-  #inner-content-left {
-    padding-left: 30px;
-  }
-
-  #inner-content-right li{
-    width: 150px;
-    margin: 0 auto;
   }
 }
 
 @media only screen and (min-width: 800px) {
-  #bottomWrap img {
+  figure img {
     width: 350px;
     height: 350px;
     margin: 20px;
   }
-
   #bottomFigBar a {
     padding: 0 20px 0 20px;
   }
-
 }
 
 @media only screen and (min-width: 1270px) {
-  #bottomWrap img {
+  figure img {
     width: 500px;
     height: 500px;
     margin: 50px;
   }
-
   #bottomFigBar a {
     margin-right: 50px;
   }
